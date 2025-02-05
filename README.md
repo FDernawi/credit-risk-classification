@@ -112,3 +112,65 @@ Code Comments (10 points)
 To receive all points, your code must:
 
 Be well commented with concise, relevant notes that other developers can understand. (10 points)
+
+
+## Overview of the Analysis
+
+In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+
+* Explain the purpose of the analysis.
+  
+The goal of this analysis was to develop and evaluate a machine learning model capable of predicting loan status, distinguishing between healthy loans (0) and high-risk loans (1). This helps financial institutions assess loan applications efficiently, minimizing financial risk while maintaining profitability.
+
+* Explain what financial information the data was on, and what you needed to predict.
+  
+The dataset contains financial information about loan applications, including borrower credit history and financial standing.
+
+* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
+
+Using value_counts(), the dataset is highly imbalanced
+
+* Describe the stages of the machine learning process you went through as part of this analysis.
+
+	1.	Data Preprocessing
+	2.	Model Selection & Training
+	3.	Model Evaluation
+
+* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any other algorithms).
+
+Logistic Regression was chosen for this analysis because it is a simple yet effective classification algorithm that works well for binary classification problems, such as predicting loan status (healthy vs. high-risk loans)
+
+## Results
+
+Using bulleted lists, describe the accuracy scores and the precision and recall scores of all machine learning models.
+
+* Machine Learning Model 1:
+    * Description of Model 1 Accuracy, Precision, and Recall scores.
+ 
+    •	Accuracy Score: 99%
+	•	Precision & Recall Scores:
+	•	Healthy Loans (0)
+	•	Precision: 1.00 → Every predicted healthy loan was correct.
+	•	Recall: 0.99 → 99% of actual healthy loans were correctly identified.
+	•	High-Risk Loans (1)
+	•	Precision: 0.86 → 86% of predicted high-risk loans were actually high-risk.
+	•	Recall: 0.94 → 94% of actual high-risk loans were correctly identified.
+
+## Summary
+
+Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
+
+* Which one seems to perform best? How do you know it performs best?
+
+•	Logistic Regression achieved an overall accuracy of 99%, making it highly effective for predicting loan status
+
+* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+
+Yes, the importance of the model depends on the business objective:
+	•	If the goal is to avoid high-risk loans at all costs, then high recall for Class 1 (0.94) makes the model useful.
+	•	If the goal is to avoid rejecting too many healthy loans, the precision for Class 1 (0.86) should be improved.
+
+If you do not recommend any of the models, please justify your reasoning.
+
+The Logistic Regression model is recommended, but with adjustments.
+	•	The model performs exceptionally well overall, but some false positives (incorrectly flagged high-risk loans) could be reduced.
